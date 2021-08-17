@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.register
+{   
+    background-image: url("../../image/blog.jpg") ; 
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+}
+
+.register > .form
+{
+    
+    position: absolute;
+    top: 27%;
+    left: 35%;
+    background-color: rgb(238, 238, 238 , 0.9);
+    padding: 20px;
+    border-radius: 5%;
+    height: 55%;
+    width: 30%;
+    text-align: center;
+}
+
+.register > .form h1,.register > .form h2
+{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.register > .form form  p  input
+{
+    width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    border-bottom: 1px solid black;
+    line-height: 40px;
+}
+
+.register > .form form button
+{
+    background-color: #548CA8;
+    color: white;
+    font-size: 20px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 50%;
+    line-height: 30px;
+}
+
+@media screen and (max-width : 825px)
+{
+    .register > .form h1,.register > .form h2
+    {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width : 610px)
+{
+    .register > .form h1,.register > .form h2
+    {
+        font-size: 15px;
+    }
+
+    .register > .form form  p  input
+    {
+        font-size: 15px;
+    }
+
+    .register > .form form button
+    {
+        font-size: 15px;
+        padding: 3px;
+    }
+}
+
+@media screen and (max-width : 406px)
+{
+
+    .register > .form form button
+    {
+        font-size: 12px;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width : 281px)
+{
+
+    .register > .form form button
+    {
+        font-size: 10px;
+        padding: 0px;
+    }
+}

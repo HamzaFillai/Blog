@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.login
+{   
+    background-image: url("../../image/blog.jpg") ; 
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */
+}
+
+.login > .form
+{
+    
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-color: rgb(238, 238, 238 , 0.9);
+    padding: 20px;
+    border-radius: 5%;
+    height: 40%;
+    width: 30%;
+    text-align: center;
+}
+
+.login > .form h1
+{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login > .form form  p  input
+{
+    width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    border-bottom: 1px solid black;
+    line-height: 40px;
+}
+
+.login > .form form button
+{
+    background-color: #548CA8;
+    color: white;
+    font-size: 20px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 50%;
+    line-height: 30px;
+}
+
+.login > .form p a
+{
+    text-decoration: none;
+    color: #476072;
+    font-weight: bold;
+}
+
+@media screen and (max-width : 793px)
+{
+    .login > .form p a
+    {
+        font-size: 12px;
+    }
+
+    .login > .form form  p  input
+    {
+        font-size: 15px;
+    }
+
+    .login > .form form button
+    {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width : 594px)
+{
+    .login > .form p a
+    {
+        font-size: 9px;
+    }
+
+    .login > .form form  p  input
+    {
+        font-size: 12px;
+    }
+
+    .login > .form form button
+    {
+        font-size: 12px;
+    }
+
+    .login > .form h1
+    {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width : 445px)
+{
+    .login > .form p a
+    {
+        font-size: 8px;
+    }
+
+    .login > .form form  p  input
+    {
+        font-size: 10px;
+    }
+
+    .login > .form form button
+    {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .login > .form h1
+    {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width : 396px)
+{
+    .login > .form p a
+    {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width : 350px)
+{
+    .login > .form p a
+    {
+        font-size: 5px;
+    }
+
+    .login > .form form  p  input
+    {
+        font-size: 8px;
+    }
+
+    .login > .form form button
+    {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .login > .form h1
+    {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width : 321px)
+{
+    .login > .form form  p  input
+    {
+        line-height: 20px;
+    }
+}
