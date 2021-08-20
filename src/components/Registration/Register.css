@@ -15,14 +15,20 @@
 {
     
     position: absolute;
-    top: 27%;
+    top: 20%;
     left: 35%;
     background-color: rgb(238, 238, 238 , 0.9);
     padding: 20px;
     border-radius: 5%;
-    height: 55%;
+    height: 59%;
     width: 30%;
     text-align: center;
+}
+
+.register > .form p
+{
+    color: red;
+    font-weight: bold;
 }
 
 .register > .form h1,.register > .form h2
@@ -31,7 +37,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.register > .form form  p  input
+.register > .form div  p  input
 {
     width: 100%;
     font-size: 20px;
@@ -42,7 +48,7 @@
     line-height: 40px;
 }
 
-.register > .form form button
+.register > .form div button
 {
     background-color: #548CA8;
     color: white;
@@ -69,22 +75,27 @@
         font-size: 15px;
     }
 
-    .register > .form form  p  input
+    .register > .form div  p  input
     {
         font-size: 15px;
     }
 
-    .register > .form form button
+    .register > .form div button
     {
         font-size: 15px;
         padding: 3px;
+    }
+
+    .register > .form p
+    {
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width : 406px)
 {
 
-    .register > .form form button
+    .register > .form div button
     {
         font-size: 12px;
         padding: 0px;
@@ -94,7 +105,7 @@
 @media screen and (max-width : 281px)
 {
 
-    .register > .form form button
+    .register > .form div button
     {
         font-size: 10px;
         padding: 0px;
