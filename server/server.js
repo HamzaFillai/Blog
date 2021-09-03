@@ -3,6 +3,7 @@ const app =  express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const BlogModel = require("./models");
+const { response } = require("express");
 
 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 app.use(cors());
@@ -30,7 +31,7 @@ app.get("/",async(request,response)=>{
 app.post("/savingusers",async (request,response)=>{
     if(re.test(request.body.mail)==false)
     {
-        response.send({error : "It's not the correct from for the address mail !"})
+        response.send({error : "It's not the correct from for the email address !"})
     }
     else
     {
@@ -38,12 +39,34 @@ app.post("/savingusers",async (request,response)=>{
         c.then(function(count){
             if(count==1)
             {
-                response.send({error:"This address mail is already exist"})
+                response.send({error:"This email address is already exist"})
             }
             else
             {
                 BlogModel.savePerson(request.body.firstname,request.body.lastname,request.body.mail,request.body.password);
                 response.send({inserted:"GOOD"})
+            }
+        })
+    }
+})
+
+app.post("/login",async(request,response)=>
+{
+    if(re.test(request.body.mail)==false)
+    {
+        response.send({error : "It's not the correct from for the email address !"})
+    }
+    else
+    {
+        const c = BlogModel.existingUser(request.body.mail,request.body.password);
+        c.then(function(count){
+            if(count==1)
+            {
+                response.send({success:"Successfully"})            
+            }
+            else
+            {
+                response.send({error:"*Incorrect email address or password"})
             }
         })
     }

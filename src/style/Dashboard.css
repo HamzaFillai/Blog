@@ -1,0 +1,9 @@
+.admindashboard
+{
+    display: flex;
+}
+
+.admindashboard > .dashboad 
+{
+    padding: 60px;
+}

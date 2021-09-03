@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import "./Register.css"
+import "../../style/Register.css"
 import Axios from "axios"
 
 export default function Register() {
@@ -49,7 +49,7 @@ export default function Register() {
                         <input type="text" placeholder="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
                     </p>
                     <p>
-                        <input type="text" placeholder="Address Mail" onChange={(e)=>setMail(e.target.value)}/>
+                        <input type="text" placeholder="Email Address" onChange={(e)=>setMail(e.target.value)}/>
                     </p>
                     <p>
                         <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
