@@ -1,9 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
 .admindashboard
 {
     display: flex;
+    background-color: #F7F6F2;
 }
 
 .admindashboard > .dashboad 
 {
-    padding: 60px;
+    margin-left: 60px;
+    margin-top: 15px;
+}
+
+.admindashboard > .dashboad h1
+{
+    font-family: 'Merriweather', serif;
+    color: #03506F;
+    line-height: 100px;
+}
+
+.admindashboard > .dashboad h1 span
+{
+    visibility: hidden;
+}
+
+.admindashboard > .dashboad > .blogsdash
+{
+    background: #99154E;
+    position: relative;
+    width: 400%;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.admindashboard > .dashboad > .usersdash
+{
+    background: #FFB830;
+    position: relative;
+    width: 400%;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.admindashboard > .dashboad > .ticketsdash
+{
+    background: #6F69AC;
+    position: relative;
+    width: 400%;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.admindashboard > .dashboad > .blogsdash > .title , .admindashboard > .dashboad > .usersdash > .title , .admindashboard > .dashboad > .ticketsdash > .title
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.admindashboard > .dashboad > .blogsdash > .number , .admindashboard > .dashboad > .usersdash > .number , .admindashboard > .dashboad > .ticketsdash > .number
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.admindashboard > .dashboad > .blogsdash p i , .admindashboard > .dashboad > .usersdash p i, .admindashboard > .dashboad > .ticketsdash p i
+{
+    float: right;
+    margin-top: -120px;
+    font-size: 100px;
+}
+
+@media screen and (max-width : 1198px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 350%;
+    }
+}
+
+@media screen and (max-width : 1090px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 300%;
+    }
+}
+
+@media screen and (max-width : 980px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 250%;
+    }
+}
+
+@media screen and (max-width : 873px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 200%;
+    }
+}
+
+@media screen and (max-width : 765px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 150%;
+    }
+}
+
+@media screen and (max-width : 465px) {
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 100%;
+    }
+
+    .admindashboard > .dashboad > .blogsdash p i , .admindashboard > .dashboad > .usersdash p i, .admindashboard > .dashboad > .ticketsdash p i
+    {
+        font-size: 50px;
+        margin-top: -100px;
+    }
+}
+
+@media screen and (max-height: 676px) {
+    .admindashboard > .dashboad > .blogsdash > .title , .admindashboard > .dashboad > .usersdash > .title , .admindashboard > .dashboad > .ticketsdash > .title
+    {
+        font-size: 20px;
+    }
+    
+    .admindashboard > .dashboad > .blogsdash > .number , .admindashboard > .dashboad > .usersdash > .number , .admindashboard > .dashboad > .ticketsdash > .number
+    {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-height: 641px) {
+    .admindashboard > .dashboad 
+    {
+        margin-top: -10px;
+    }
+}
+
+@media screen and (max-height: 589px) {
+    .admindashboard > .dashboad > .blogsdash > .title , .admindashboard > .dashboad > .usersdash > .title , .admindashboard > .dashboad > .ticketsdash > .title
+    {
+        font-size: 20px;
+    }
+    
+    .admindashboard > .dashboad > .blogsdash > .number , .admindashboard > .dashboad > .usersdash > .number , .admindashboard > .dashboad > .ticketsdash > .number
+    {
+        font-size: 40px;
+    }
+
+    .admindashboard > .dashboad > .blogsdash p i , .admindashboard > .dashboad > .usersdash p i, .admindashboard > .dashboad > .ticketsdash p i
+    {
+        display: none;
+    }
+
+    .admindashboard > .dashboad > .blogsdash,.admindashboard > .dashboad > .usersdash,.admindashboard > .dashboad > .ticketsdash
+    {
+        width: 90%;
+    }
 }

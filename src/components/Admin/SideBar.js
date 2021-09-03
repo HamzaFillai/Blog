@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function SideBar() {
     return (
-        <div
+        <div className="sidebar"
         style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}
         >
         <CDBSidebar textColor="#4B6587" backgroundColor="#F0E5CF">
@@ -41,11 +41,6 @@ export default function SideBar() {
                 </NavLink>
                 <NavLink exact to="/profile" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-                </NavLink>
-                <NavLink exact to="/analytics" activeClassName="activeClicked">
-                <CDBSidebarMenuItem icon="chart-line">
-                    Analytics
-                </CDBSidebarMenuItem>
                 </NavLink>
             </CDBSidebarMenu>
             </CDBSidebarContent>
