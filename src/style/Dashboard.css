@@ -20,11 +20,6 @@
     line-height: 100px;
 }
 
-.admindashboard > .dashboad h1 span
-{
-    visibility: hidden;
-}
-
 .admindashboard > .dashboad > .blogsdash
 {
     background: #99154E;

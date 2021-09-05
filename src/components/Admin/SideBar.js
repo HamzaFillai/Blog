@@ -27,19 +27,19 @@ export default function SideBar() {
 
             <CDBSidebarContent className="sidebar-content">
             <CDBSidebarMenu >
-                <NavLink exact to="/" activeClassName="activeClicked">
+                <NavLink exact to="/admin/dashboard" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
                 </NavLink>
-                <NavLink exact to="/users" activeClassName="activeClicked">
+                <NavLink exact to="/admin/users" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="users">Users</CDBSidebarMenuItem>
                 </NavLink>
-                <NavLink exact to="/blogs" activeClassName="activeClicked">
+                <NavLink exact to="/admin/blogs" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="blog">Blogs</CDBSidebarMenuItem>
                 </NavLink>
-                <NavLink exact to="/blogs" activeClassName="activeClicked">
+                <NavLink exact to="/admin/tickets" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="ticket-alt">Tickets</CDBSidebarMenuItem>
                 </NavLink>
-                <NavLink exact to="/profile" activeClassName="activeClicked">
+                <NavLink exact to="/admin/profile" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
                 </NavLink>
             </CDBSidebarMenu>

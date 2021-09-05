@@ -3,7 +3,6 @@ const app =  express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const BlogModel = require("./models");
-const { response } = require("express");
 
 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 app.use(cors());
@@ -25,9 +24,38 @@ app.get("/",async(request,response)=>{
     ticket.then(function(result){
         response.send("inserted");
     })*/
-    response.send("OK")
+    const c = BlogModel.countBlogs();
+    c.then(function(count){
+        response.send(count.toString());
+        console.log(count);
+    })
+});
+
+//Count total number of documents in Blog collection
+app.get("/countblog",async(request,response)=>{
+    const c = BlogModel.countBlogs();
+    c.then(function(count){
+        response.send(count.toString());
+    })
 })
 
+//Count total number of documents in User collection
+app.get("/countuser",async(request,response)=>{
+    const c = BlogModel.countUsers();
+    c.then(function(count){
+        response.send(count.toString());
+    })
+})
+
+//Count total number of documents in Ticket collection
+app.get("/countticket",async(request,response)=>{
+    const c = BlogModel.countTickets();
+    c.then(function(count){
+        response.send(count.toString());
+    })
+})
+
+//Saving user
 app.post("/savingusers",async (request,response)=>{
     if(re.test(request.body.mail)==false)
     {
@@ -50,6 +78,7 @@ app.post("/savingusers",async (request,response)=>{
     }
 })
 
+//Login
 app.post("/login",async(request,response)=>
 {
     if(re.test(request.body.mail)==false)

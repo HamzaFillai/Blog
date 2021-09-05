@@ -54,5 +54,23 @@ module.exports = {
     {
         const c =  await Person.countDocuments({email:email,password:password});  
         return c;
+    },
+
+    async countBlogs()
+    {
+        const c = await Blog.countDocuments({});
+        return c;
+    },
+
+    async countUsers()
+    {
+        const c = await Person.countDocuments({});
+        return c;
+    },
+
+    async countTickets()
+    {
+        const c = await Ticket.countDocuments({});
+        return c;
     }
 }
