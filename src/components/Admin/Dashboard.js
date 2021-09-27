@@ -37,19 +37,19 @@ export default function Dashboard() {
                 <h1>Dashboard</h1>
                 <div className="blogsdash">
                     <p className="title">Blogs</p>
-                    <p className="number">{numBlog}1</p>
+                    <p className="number">{numBlog}</p>
                     <p><i className="fas fa-chart-bar"></i></p>
                 </div>
                 <br/>
                 <div className="usersdash">
                     <p className="title">Users</p>
-                    <p className="number">{numUser}1</p>
+                    <p className="number">{numUser}</p>
                     <p><i className="fas fa-chart-bar"></i></p>
                 </div>
                 <br/>
                 <div className="ticketsdash">
                     <p className="title">Tickets</p>
-                    <p className="number">{numTick}1</p>
+                    <p className="number">{numTick}</p>
                     <p><i className="fas fa-chart-bar"></i></p>
                 </div>
             </div>
