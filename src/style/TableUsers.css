@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+.tableusers
+{
+    margin-left: 350px;
+}
+
+.tableusers h1
+{
+    margin-top: -600px;
+    font-family: 'Merriweather', serif;
+    color: #03506F;
+}
+
+.tableusers div
+{
+    height: 351px;
+    overflow: auto;
+}
+
+.tableusers div table 
+{
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+.tableusers div table th
+{
+    background-color: #F7D59C;
+}
+
+.tableusers div table th , .tableusers div table td
+{
+    border: 1px solid black;
+    text-align: center;
+    width:12%;
+    height: 50px;
+}
+
+@media screen and (max-width : 719px){
+    .tableusers
+    {
+        margin-left: 100px;
+    }
+}

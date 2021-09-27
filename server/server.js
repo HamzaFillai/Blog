@@ -17,19 +17,29 @@ mongoose.connect('mongodb+srv://blog:blog@cluster0.8ve4s.mongodb.net/blogdata?re
 
 app.get("/",async(request,response)=>{
 
-    /*const person = BlogModel.savePerson("hamza","filali","hamza@gmail.com","azert");
-    const blog = BlogModel.saveBlog("Second");
+    const person = BlogModel.savePerson("hamza","filali",null,"hamza@gmail.com","azert");
+    /*const blog = BlogModel.saveBlog("Second");
     const ticket = BlogModel.saveTicket(Date.now(),22,"ok","nklnq",(await person)._id,(await blog)._id);
-   
-    ticket.then(function(result){
+  */
+    person.then(function(result){
         response.send("inserted");
-    })*/
-    const c = BlogModel.countBlogs();
-    c.then(function(count){
-        response.send(count.toString());
-        console.log(count);
-    })
+    }) 
 });
+
+//Get users
+app.get("/getusers",async(request,response)=>{
+    const users = BlogModel.getUsers();
+    users.then(function(user){
+        response.send(user);
+    })
+})
+
+//Delete user
+app.delete("/deleteuser/:id",async(request,response)=>{
+    const id = request.params.id;
+    BlogModel.deleteUser(id);
+    response.send("deleted");
+})
 
 //Count total number of documents in Blog collection
 app.get("/countblog",async(request,response)=>{
@@ -71,7 +81,7 @@ app.post("/savingusers",async (request,response)=>{
             }
             else
             {
-                BlogModel.savePerson(request.body.firstname,request.body.lastname,request.body.mail,request.body.password);
+                BlogModel.savePerson(request.body.firstname,request.body.lastname,null,request.body.mail,request.body.password);
                 response.send({inserted:"GOOD"})
             }
         })

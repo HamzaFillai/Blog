@@ -3,15 +3,6 @@
 
 .adminusers
 {
-    display: flex;
     background-color: #F7F6F2;
-   /* margin-left: 60px;
-    margin-top: 15px;*/
-}
-
-.adminusers h1
-{
-    font-family: 'Merriweather', serif;
-    color: #03506F;
-    line-height: 100px;
+    height: 100vh;
 }

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const PersonScema = new mongoose.Schema({
     first_name : {type : String},
     last_name : {type : String},
+    role : {type : String},
     email : {type : String},
     password : {type : String},
 })
@@ -26,9 +27,9 @@ const Blog = mongoose.model("Blog",BlogSchema);
 const Ticket = mongoose.model("Ticket",TicketSchema);
 
 module.exports = {
-    async savePerson(ferstname,lastname,email,password)
+    async savePerson(ferstname,lastname,role,email,password)
     {
-        const persone = new Person({first_name:ferstname,last_name:lastname,email:email,password:password});
+        const persone = new Person({first_name:ferstname,last_name:lastname,role : role,email:email,password:password});
         return await persone.save();
     },
 
@@ -72,5 +73,17 @@ module.exports = {
     {
         const c = await Ticket.countDocuments({});
         return c;
+    },
+
+    async getUsers()
+    {
+        const getu = await Person.find({role : null});
+        return getu;
+    },
+
+    async deleteUser(id)
+    {
+        const deleteu = await Person.findByIdAndRemove(id).exec();
+        return deleteu;
     }
 }
