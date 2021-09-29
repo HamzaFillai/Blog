@@ -42,7 +42,7 @@ export default function TableUsers() {
                             <td>{user.first_name}</td>
                             <td>{user.last_name}</td>
                             <td>{user.email}</td>
-                            <td><i onClick={()=>deleteuser(user._id)} style={{color:"red",fontSize:"20px"}} className="fas fa-trash-alt"></i></td>
+                            <td><i onClick={()=>deleteuser(user._id)} style={{color:"red",fontSize:"20px",cursor:"pointer"}} className="fas fa-trash-alt"></i></td>
                         </tr>
                     ))}
                       </tbody>

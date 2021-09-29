@@ -17,13 +17,23 @@ mongoose.connect('mongodb+srv://blog:blog@cluster0.8ve4s.mongodb.net/blogdata?re
 
 app.get("/",async(request,response)=>{
 
-    const person = BlogModel.savePerson("hamza","filali",null,"hamza@gmail.com","azert");
-    /*const blog = BlogModel.saveBlog("Second");
-    const ticket = BlogModel.saveTicket(Date.now(),22,"ok","nklnq",(await person)._id,(await blog)._id);
-  */
-    person.then(function(result){
-        response.send("inserted");
-    }) 
+    const blog = BlogModel.getBlog();
+    
+    /*blog.then(async function(result){
+        const person = BlogModel.savePerson("hamza","filali",null,"hamza@gmail.com","azert");
+        const ticket = BlogModel.saveTicket(Date.now(),22,"paris","bruxelle", result[0]._id,(await person)._id);
+        ticket.then(function(){
+            response.send("inseted")
+        })
+    }) */
+
+    blog.then(async function(result){
+        console.log(result)
+        const c = BlogModel.countTicketsofBlog(result[0]._id);
+        c.then(function(count){
+            response.send(count.toString());
+        })
+    })
 });
 
 //Get users
@@ -39,6 +49,21 @@ app.delete("/deleteuser/:id",async(request,response)=>{
     const id = request.params.id;
     BlogModel.deleteUser(id);
     response.send("deleted");
+})
+
+//Get Blogs
+app.get("/getblogs",async(request,response)=>{
+    const blogs = BlogModel.getBlogs();
+    blogs.then(function(blog){
+        response.send(blog);
+    })
+})
+
+app.get("/countticketofblog/:id",async(request,response)=>{
+    const c = BlogModel.countTicketsofBlog(request.params.id);
+    c.then(function(count){
+        response.send(count.toString());
+    }) 
 })
 
 //Count total number of documents in Blog collection

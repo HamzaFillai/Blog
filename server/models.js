@@ -75,6 +75,12 @@ module.exports = {
         return c;
     },
 
+    async countTicketsofBlog(id)
+    {
+        const c = await Ticket.countDocuments({idBlog : id});
+        return c;
+    },
+
     async getUsers()
     {
         const getu = await Person.find({role : null});
@@ -85,5 +91,17 @@ module.exports = {
     {
         const deleteu = await Person.findByIdAndRemove(id).exec();
         return deleteu;
+    },
+
+    async getBlogs()
+    {
+        const getb = await Blog.find();
+        return getb;
+    },
+
+    async getBlog()
+    {
+        const getb = await Blog.find({name : "first"});
+        return getb;
     }
 }
