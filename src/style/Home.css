@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 .homepage
 {
@@ -15,7 +16,7 @@
     font-size: 64px;
 }
 
-#imgmon
+.homepage > .monuments
 {
     background-image: url("https://wallpaperaccess.com/full/758246.jpg") ;
     height: 71vh;
@@ -58,4 +59,94 @@
     cursor: pointer;
     color: #F0A500;
     font-weight: bold;
+}
+
+.homepage > .blogscreated
+{
+    display: flex;
+    transition: 1s;
+    justify-content: space-around;
+
+}
+
+.homepage > .blogscreated section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32.6746px;
+    position: static;
+    height: 35vh;
+    width: 40vh;
+    transition: 1s;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.homepage > .blogscreated section h2 
+{
+    position: static;
+    height: 50px;   
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 100px;
+}
+
+.homepage > .blogscreated section p img 
+{
+    height: 50px; 
+    border-radius: 10%; 
+}
+
+.homepage > .blogscreated section button 
+{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16.2105px;
+    margin-top: 150px;
+    position: absolute;
+    width: 148.44px;
+    height: 50.41px;
+    border: 0;
+    background-color: transparent;
+}
+
+.homepage > .blogscreated section button  i 
+{
+    margin-left: 10px;
+}
+
+.homepage > .blogscreated section button:hover
+{
+    box-shadow: none;
+    background: #48B774;
+    border-radius: 39.4888px;
+    color: white;
+}
+
+@media screen and (max-width : 600px)
+{
+    .homepage > .blogscreated
+    {
+        display: block;
+    }
+
+    .homepage > .blogscreated section 
+    {
+        width: 90%;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width : 321px)
+{
+    .homepage > .blogscreated section 
+    {
+        height: 41vh;
+    }
 }
