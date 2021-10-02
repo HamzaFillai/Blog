@@ -1,44 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-
-.tableblogs
+.tabletickets
 {
     margin-left: 350px;
 }
 
-.tableblogs h1
+.tabletickets h1
 {
     margin-top: -90vh;
     font-family: 'Merriweather', serif;
     color: #03506F;
 }
 
-.tableblogs div
+.tabletickets div
 {
     height: 351px;
     overflow: auto;
 }
 
-.tableblogs div table 
+.tabletickets div table 
 {
     border-collapse: collapse;
     margin-top: 50px;
 }
 
-.tableblogs div table th
+.tabletickets div table th
 {
     background-color: #F7D59C;
 }
 
-.tableblogs div table th , .tableblogs div table td
+.tabletickets div table th , .tabletickets div table td
 {
     border: 1px solid black;
     text-align: center;
-    width:12%;
+    width:10%;
     height: 50px;
 }
 
 @media screen and (max-width : 719px){
-    .tableblogs
+    .tabletickets
     {
         margin-left: 100px;
     }

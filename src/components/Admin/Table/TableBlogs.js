@@ -8,6 +8,7 @@ export default function TableBlogs() {
     const [blogs,setBlogs] = useState([]);
     const [totalblog,setTotalblog] = useState();
     var count = [];
+    var obj = {};
     const [countt,setCountt] = useState([]);
 
     useEffect(()=>{
@@ -20,14 +21,14 @@ export default function TableBlogs() {
                 {
                     Axios.get("http://localhost:8080/countticketofblog/"+response.data[i]._id).then((resp)=>{    
                         count.push(resp.data);
-                        setCountt(count)
+                        setCountt(count);
                     })
                 }
             })
             
         });
     },[]);
-        
+
     return (
         <div className="tableblogs">
             <h1>List of blogs</h1>
@@ -44,7 +45,7 @@ export default function TableBlogs() {
                        {blogs.map((blog,i)=>(
                             <tr key={blog._id}>
                                 <td>{blog.name}</td>
-                                <td>{countt[i]}</td>
+                                {<td>{countt[i]}</td>}
                                 <td><i  style={{color:"red",fontSize:"20px"}} className="fas fa-trash-alt"></i></td>
                             </tr>
                         ))}

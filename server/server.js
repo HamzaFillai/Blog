@@ -17,23 +17,15 @@ mongoose.connect('mongodb+srv://blog:blog@cluster0.8ve4s.mongodb.net/blogdata?re
 
 app.get("/",async(request,response)=>{
 
-    const blog = BlogModel.getBlog();
+    /*const blog = BlogModel.saveBlog();
     
-    /*blog.then(async function(result){
+    blog.then(async function(result){
         const person = BlogModel.savePerson("hamza","filali",null,"hamza@gmail.com","azert");
         const ticket = BlogModel.saveTicket(Date.now(),22,"paris","bruxelle", result[0]._id,(await person)._id);
         ticket.then(function(){
             response.send("inseted")
         })
     }) */
-
-    blog.then(async function(result){
-        console.log(result)
-        const c = BlogModel.countTicketsofBlog(result[0]._id);
-        c.then(function(count){
-            response.send(count.toString());
-        })
-    })
 });
 
 //Get users

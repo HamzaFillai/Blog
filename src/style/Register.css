@@ -16,12 +16,11 @@
     
     position: absolute;
     top: 20%;
-    left: 35%;
+    left: 30%;
     background-color: rgb(238, 238, 238 , 0.9);
     padding: 20px;
     border-radius: 5%;
-    height: 59%;
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
 
@@ -92,6 +91,14 @@
     }
 }
 
+@media screen and (max-width : 412px)
+{
+    .register > .form
+    {
+        width: 45%;
+    }
+}
+
 @media screen and (max-width : 406px)
 {
 
@@ -99,6 +106,11 @@
     {
         font-size: 12px;
         padding: 0px;
+    }
+
+    .register > .form
+    {
+        width: 50%;
     }
 }
 

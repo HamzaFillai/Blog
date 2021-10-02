@@ -1,0 +1,29 @@
+.homanav
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: #F0E5CF;
+    padding: 10px;
+}
+
+.homanav > .blog i
+{
+    font-size: 40px;
+}
+
+.homanav > .logsign
+{
+    display: flex;
+}
+
+.homanav > .logsign p 
+{
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.homanav > .logsign p a
+{
+    color: #4B6587;
+    text-decoration: none;
+}

@@ -54,7 +54,7 @@ export default function Register() {
                     <p>
                         <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
                     </p>
-                    <button onClick={()=>save()}>Sing up</button>
+                    <button onClick={()=>save()}>Sign up</button>
                 </div>
             </div>
         </div>

@@ -101,7 +101,7 @@ module.exports = {
 
     async getBlog()
     {
-        const getb = await Blog.find({name : "first"});
+        const getb = await Blog.find({name : "third"});
         return getb;
     }
 }

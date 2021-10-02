@@ -16,12 +16,11 @@
     
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 30%;
     background-color: rgb(238, 238, 238 , 0.9);
     padding: 20px;
     border-radius: 5%;
-    height: 45%;
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
 
