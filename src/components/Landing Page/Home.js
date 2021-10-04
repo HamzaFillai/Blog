@@ -34,7 +34,16 @@ export default function Home() {
             c=c-3;
         }
     }
-    
+
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    var rootElement = document.documentElement;
+
+    function scrollToTop () {
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          })
+    }
 
     return (
         <div className="homepage">
@@ -95,6 +104,10 @@ export default function Home() {
                     <p>I didn't even know where to start as far advertising goes or how to reach people. Sixads really made this part so easy and effective, thank you !</p>
                 </div>
             </div>
+            <br/>
+            <footer style={{textAlign:"right",padding:"12px"}}>
+                <h3 style={{fontFamily:"Quicksand"}}>What are you waiting for, JOIN US  <button onClick={()=>scrollToTop()} id="scrollToTopBtn">☝️</button></h3>
+            </footer>
         </div>
     )
 }
