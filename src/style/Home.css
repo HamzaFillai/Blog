@@ -79,7 +79,7 @@
     height: 35vh;
     width: 40vh;
     transition: 1s;
-    background-color: white;
+    background-color: #79B4B7;
     border-radius: 10%;
 }
 
@@ -127,6 +127,99 @@
     background: #48B774;
     border-radius: 39.4888px;
     color: white;
+}
+
+.homepage > .blogcustomers 
+{
+    display: flex;
+    justify-content: space-around;
+    transition: 1s;
+}
+
+.homepage > .blogcustomers > .eachcustomers
+{
+    background-color: #4B6587;
+    color: white;
+    padding: 12px;
+    border-radius: 10%;
+    transition: 1s;
+}
+
+.homepage > .blogcustomers > .eachcustomers div
+{
+    display: flex;
+}
+
+.homepage > .blogcustomers > .eachcustomers div p
+{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -3px;
+}
+
+.homepage > .blogcustomers > .eachcustomers div p i
+{
+    font-size: 15px;
+}
+
+.homepage > .blogcustomers > .eachcustomers div img
+{
+    position: static;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.homepage > .blogcustomers > .eachcustomers p
+{
+    width: 300px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width : 1198px)
+{
+    .homepage > .blogcustomers > .eachcustomers p
+    {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width : 1051px)
+{
+    .homepage > .blogcustomers > .eachcustomers p
+    {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width : 1001px)
+{
+    .homepage > .blogcustomers > .eachcustomers p
+    {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width : 751px)
+{
+    .homepage > .blogcustomers 
+    {
+        display: block;
+        
+    }
+
+    .homepage > .blogcustomers > .eachcustomers 
+    {
+        margin-left: 10px;
+        border-radius: 2%;
+        width: 95%;
+    }
+
+    .homepage > .blogcustomers > .eachcustomers p
+    {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width : 600px)
