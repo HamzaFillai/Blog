@@ -4,30 +4,49 @@ import Axios from "axios"
 
 export default function TableBlogs() {
 
-    var c , i;
+    var i,j,c=0;
+    var f = [];
     const [blogs,setBlogs] = useState([]);
-    const [totalblog,setTotalblog] = useState();
-    var count = [];
-    var obj = {};
-    const [countt,setCountt] = useState([]);
+    const [count,setCount] = useState([]);
 
-    useEffect(()=>{
-        Axios.get("http://localhost:8080/countblog").then((res)=>{
-            c = res.data;
-            setTotalblog(res.data);
-            Axios.get("http://localhost:8080/getblogs").then((response)=>{
-                setBlogs(response.data);
-                for(i=0;i<c;i++)
-                {
-                    Axios.get("http://localhost:8080/countticketofblog/"+response.data[i]._id).then((resp)=>{    
-                        count.push(resp.data);
-                        setCountt(count);
-                    })
-                }
-            })
-            
-        });
+    useEffect( ()=>{
+            Axios.get("http://localhost:8080/getblogs").then( (resp)=>{
+                setBlogs(resp.data);
+                Axios.get("http://localhost:8080/gettickets").then((response)=>{
+                    for(i=0;i<resp.data.length;i++)
+                    {
+                        f[i]=0;
+                        for(j=0;j<response.data.length;j++)
+                        {
+                            if(resp.data[i]._id==response.data[j].idBlog[0])
+                            {
+                                f[i]+=1;
+                            }
+                        }
+                    }
+                    setCount(f)
+                });
+            });
     },[]);
+
+    console.log(count)
+
+    const deleteblog = (id,i)=>{
+        Axios.delete("http://localhost:8080/deleteblog/"+id).then((response)=>{
+            setBlogs(
+                blogs.filter((val) => {
+                return (val._id != id);
+                })
+            )
+            const index = count.indexOf(count[i]);
+            if(index>-1)
+            {
+                count.splice(index,1);
+            }
+            setCount(count)
+        })
+        console.log(count)
+    }
 
     return (
         <div className="tableblogs">
@@ -42,13 +61,13 @@ export default function TableBlogs() {
                         </tr>
                     </thead>
                     <tbody>
-                       {blogs.map((blog,i)=>(
+                       {blogs.map((blog,i)=>
                             <tr key={blog._id}>
                                 <td>{blog.name}</td>
-                                {<td>{countt[i]}</td>}
-                                <td><i  style={{color:"red",fontSize:"20px"}} className="fas fa-trash-alt"></i></td>
+                                <td>{count[i]}</td>
+                                <td><i onClick={()=>deleteblog(blog._id,i)} style={{color:"red",fontSize:"20px",cursor:"pointer"}} className="fas fa-trash-alt"></i></td>
                             </tr>
-                        ))}
+                       )}
                     </tbody>
                 </table>
             </div>

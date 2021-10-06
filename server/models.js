@@ -99,6 +99,24 @@ module.exports = {
         return getb;
     },
 
+    async deleteBlog(id)
+    {
+        const deleteu = await Blog.findByIdAndRemove(id).exec();
+        return deleteu;
+    },
+
+    async getTickets()
+    {
+        const ticket = await Ticket.find();
+        return ticket;
+    },
+
+    async deleteTickets(id)
+    {
+        const deleteu = await Ticket.deleteMany({idBlog : id});
+        return deleteu;
+    },
+
     async getBlog()
     {
         const getb = await Blog.find({name : "third"});

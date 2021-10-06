@@ -26,6 +26,13 @@ app.get("/",async(request,response)=>{
             response.send("inseted")
         })
     }) */
+    //const tickets = BlogModel.deleteTickets(A)
+    const blog = BlogModel.saveBlog("sec")
+    const tickets = BlogModel.saveTicket(Date.now(),22,"paris","bruxelle",(await blog)._id,["6152f1c5a3a4d4244c227e08"]);
+    tickets.then(function(ticket){ 
+        
+        response.send("ticket");
+    })
 });
 
 //Get users
@@ -51,10 +58,29 @@ app.get("/getblogs",async(request,response)=>{
     })
 })
 
+//Delete blog
+app.delete("/deleteblog/:id",async(request,response)=>{
+    const id = request.params.id;
+    var Array = [];
+    Array[0] = id.toString();
+    BlogModel.deleteBlog(id);
+    BlogModel.deleteTickets(Array);
+    response.send("deleted");
+})
+
+//Get Ticket
+app.get("/gettickets",async(request,response)=> {
+    const tickets = BlogModel.getTickets();
+    tickets.then(function(ticket){
+        response.send(ticket);
+    })
+})
+
+//Count total number of tickets for each blog
 app.get("/countticketofblog/:id",async(request,response)=>{
     const c = BlogModel.countTicketsofBlog(request.params.id);
     c.then(function(count){
-        response.send(count.toString());
+        response.send({id : count.toString()});
     }) 
 })
 
