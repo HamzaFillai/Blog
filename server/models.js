@@ -87,6 +87,12 @@ module.exports = {
         return getu;
     },
 
+    async getUser(id)
+    {
+        const getu = await Person.findById(id);
+        return getu;
+    },
+
     async deleteUser(id)
     {
         const deleteu = await Person.findByIdAndRemove(id).exec();
@@ -96,6 +102,12 @@ module.exports = {
     async getBlogs()
     {
         const getb = await Blog.find();
+        return getb;
+    },
+
+    async getBlog(id)
+    {
+        const getb = await Blog.findById(id);
         return getb;
     },
 
@@ -117,9 +129,9 @@ module.exports = {
         return deleteu;
     },
 
-    async getBlog()
+    async deleteTicket(id)
     {
-        const getb = await Blog.find({name : "third"});
-        return getb;
+        const deletet = await Ticket.findByIdAndRemove(id).exec();
+        return deletet;
     }
 }

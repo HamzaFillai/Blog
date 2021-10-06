@@ -27,18 +27,30 @@ app.get("/",async(request,response)=>{
         })
     }) */
     //const tickets = BlogModel.deleteTickets(A)
-    const blog = BlogModel.saveBlog("sec")
-    const tickets = BlogModel.saveTicket(Date.now(),22,"paris","bruxelle",(await blog)._id,["6152f1c5a3a4d4244c227e08"]);
-    tickets.then(function(ticket){ 
+    const blog = BlogModel.saveBlog("first")
+    
+    
+    const user = BlogModel.getUser("6152f1f0378fbe3b5843e6d7")
+    user.then(function(ticket){ 
         
-        response.send("ticket");
+        response.send(ticket);
     })
 });
 
-//Get users
+//Get user list
 app.get("/getusers",async(request,response)=>{
     const users = BlogModel.getUsers();
     users.then(function(user){
+        response.send(user);
+    })
+})
+
+//Get one user
+app.get("/getuser/:id",async(request,response)=>{
+    console.log(request.params.id);
+    const users = BlogModel.getUser(request.params.id);
+    users.then(function(user){
+        console.log(user)
         response.send(user);
     })
 })
@@ -50,11 +62,19 @@ app.delete("/deleteuser/:id",async(request,response)=>{
     response.send("deleted");
 })
 
-//Get Blogs
+//Get Blog list
 app.get("/getblogs",async(request,response)=>{
     const blogs = BlogModel.getBlogs();
     blogs.then(function(blog){
         response.send(blog);
+    })
+})
+
+//Get one blog
+app.get("/getblog/:id",async(request,response)=>{
+    const users = BlogModel.getBlog(request.params.id);
+    users.then(function(user){
+        response.send(user);
     })
 })
 
@@ -68,12 +88,19 @@ app.delete("/deleteblog/:id",async(request,response)=>{
     response.send("deleted");
 })
 
-//Get Ticket
+//Get Tickelist
 app.get("/gettickets",async(request,response)=> {
     const tickets = BlogModel.getTickets();
     tickets.then(function(ticket){
         response.send(ticket);
     })
+})
+
+//Delete Ticket
+app.delete("/deleteticket/:id",async(request,response)=>{
+    const id = request.params.id;
+    BlogModel.deleteTicket(id);
+    response.send("deleted");
 })
 
 //Count total number of tickets for each blog

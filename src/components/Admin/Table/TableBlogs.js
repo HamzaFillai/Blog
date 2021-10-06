@@ -24,26 +24,26 @@ export default function TableBlogs() {
                             }
                         }
                     }
+                    
                     setCount(f)
                 });
             });
     },[]);
 
-    console.log(count)
-
     const deleteblog = (id,i)=>{
         Axios.delete("http://localhost:8080/deleteblog/"+id).then((response)=>{
+            console.log("Deleted")
             setBlogs(
                 blogs.filter((val) => {
+                    console.log(val)
                 return (val._id != id);
                 })
             )
-            const index = count.indexOf(count[i]);
-            if(index>-1)
-            {
-                count.splice(index,1);
-            }
-            setCount(count)
+            setCount(
+                count.filter((ct)=>{
+                    return (ct!=i);
+                })
+            )
         })
         console.log(count)
     }
