@@ -27,13 +27,12 @@ app.get("/",async(request,response)=>{
         })
     }) */
     //const tickets = BlogModel.deleteTickets(A)
-    const blog = BlogModel.saveBlog("first")
     
     
-    const user = BlogModel.getUser("6152f1f0378fbe3b5843e6d7")
+    const user = BlogModel.UpdatePassword("nice")
     user.then(function(ticket){ 
         
-        response.send(ticket);
+        response.send("ticket");
     })
 });
 
@@ -60,6 +59,23 @@ app.delete("/deleteuser/:id",async(request,response)=>{
     const id = request.params.id;
     BlogModel.deleteUser(id);
     response.send("deleted");
+})
+
+//Get the information about admin
+app.get("/getadmin",async(request,response)=> {
+    const user = BlogModel.getAdmin()
+    user.then(function(admin){ 
+        response.send(admin);
+    })
+})
+
+//Update admin's pasword
+app.put("/updatepassordadmin",async(request,response)=>{
+    console.log(request.body.newpassword);
+    const update = BlogModel.UpdatePassword(request.body.newpassword);
+    update.then(function(){
+        response.send({succes:"successfully"})
+    })
 })
 
 //Get Blog list

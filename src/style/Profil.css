@@ -1,0 +1,114 @@
+.adminprofile
+{
+    background-color: #F7F6F2;
+    height: 100vh;
+}
+
+.adminprofile > .profile 
+{
+    margin-left: 350px;
+    margin-top: -90vh;
+}
+
+.adminprofile > .profile h1
+{
+    font-family: 'Merriweather', serif;
+    color: #03506F;
+}
+
+.adminprofile > .profile > .flexfomr
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.adminprofile > .profile > .flexfomr >.profileinfo
+{
+    margin-top: 5vh;
+    background-color: #DBD0C0;
+    padding: 20px;
+    width: 48%;
+    height: 52vh;
+}
+
+.adminprofile > .profile > .flexfomr >.profilepass
+{
+    margin-top: 5vh;
+    background-color: #DBD0C0;
+    padding: 20px;
+    width: 48%;
+}
+
+.adminprofile > .profile >.flexfomr > .profileinfo div 
+{
+    margin-top: 5vh;
+}
+
+.adminprofile > .profile > .flexfomr >.profilepass p
+{
+    margin-top: 5vh;
+}
+
+.adminprofile > .profile > .flexfomr >.profileinfo div p i
+{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.adminprofile > .profile > .flexfomr >.profileinfo div p input , .adminprofile > .profile > .flexfomr >.profilepass p input
+{
+    border : 0;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    width: 100%;
+}
+
+.adminprofile > .profile > .flexfomr >.profilepass button
+{
+    margin-top: 20px;
+    background-color: #6D9886;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 1027px){
+
+    .adminprofile > .profile > .flexfomr >.profileinfo
+    {
+        height: 57vh;
+    }
+}
+
+@media screen and (max-width : 1002px)
+{
+    .adminprofile > .profile > .flexfomr
+    {
+        display: block;
+    }
+
+    .adminprofile > .profile > .flexfomr >.profileinfo
+    {
+        width: 90%;
+    }
+
+    .adminprofile > .profile > .flexfomr >.profilepass
+    {
+        width: 90%;
+    }
+
+    .adminprofile
+    {
+        background-color: #F7F6F2;
+        height: 152vh;
+    }
+}
+
+@media screen and (max-width : 719px){
+    .adminprofile > .profile 
+    {
+        margin-left: 100px;
+    }
+}

@@ -5,6 +5,9 @@ import User from "./components/Admin/User";
 import Blog from "./components/Admin/Blogs";
 import Ticket from "./components/Admin/Tickets";
 import Home from "./components/Landing Page/Home";
+import Profil from "./components/Admin/Profil";
+import UserHome from "./components/Users/Home";
+import AddTicket from "./components/Users/AddTicket"
 import {BrowserRouter,Route,Switch} from "react-router-dom";
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
           <Route exact path="/admin/users" component={User}/>
           <Route exact path="/admin/blogs" component={Blog}/>
           <Route exact path="/admin/tickets" component={Ticket}/>
+          <Route exact path="/admin/profile" component={Profil}/>
+          <Route exact path="/user/home" component={UserHome}/>
+          <Route exact path="/user/newticket" component={AddTicket}/>
         </Switch>
     </BrowserRouter>
   );

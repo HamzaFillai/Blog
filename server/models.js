@@ -93,6 +93,21 @@ module.exports = {
         return getu;
     },
 
+    async getAdmin()
+    {
+        const getu = await Person.find({role : "admin"});
+        return getu;
+    },
+
+    async UpdatePassword(password)
+    {
+        const newpass = await Person.findOne({role : "admin"},(err,update)=>{
+            update.password = password,
+            update.save();
+        });
+        return newpass;
+    },
+
     async deleteUser(id)
     {
         const deleteu = await Person.findByIdAndRemove(id).exec();

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.newtikcet
+{
+    background-color: #FAEEE0;
+    height: 100vh;
+}
+
+.newtikcet form
+{
+    text-align: center;
+}
+
+.newtikcet form h1
+{
+    font-family: 'Lobster', cursive;
+    color: #C56824;
+    margin-top: 10vh;
+    font-size: 60px;
+    text-align: center;
+}
+
+.newtikcet form > .miniform
+{
+    margin-top: 6vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.newtikcet form > .miniform p
+{
+    width: 100%;
+}
+
+.newtikcet form > .miniform p span , .newtikcet form p span
+{
+    
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16.9709px;
+    color: #2E2E2E;
+    text-align: right;
+}
+
+.newtikcet form > .miniform p input
+{
+    height: 46.06px;
+    left: 1.21px;
+    top: 33.94px;
+    margin-top: 10px;
+    /* Base / White */
+    font-size: 16.9709px;
+    background: #FFFFFF;
+    /* Base / Gray 2 */
+    width: 90%;
+    border: 1.2122px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 9.69763px;
+}
+
+.newtikcet form p textarea
+{
+    height: 100px;
+    left: 1.21px;
+    top: 33.94px;
+    margin-top: 10px;
+    /* Base / White */
+    font-size: 16.9709px;
+    background: #FFFFFF;
+    /* Base / Gray 2 */
+    width: 95%;
+    border: 1.2122px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 9.69763px;
+}
+
+.newtikcet form button
+{
+    background-color: #A09F57;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
