@@ -6,12 +6,7 @@
     height: 100vh;
 }
 
-.newtikcet form
-{
-    text-align: center;
-}
-
-.newtikcet form h1
+.newtikcet section h1
 {
     font-family: 'Lobster', cursive;
     color: #C56824;
@@ -20,19 +15,19 @@
     text-align: center;
 }
 
-.newtikcet form > .miniform
+.newtikcet section > .miniform
 {
-    margin-top: 6vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: space-around;
 }
 
-.newtikcet form > .miniform p
+.newtikcet section > .miniform p
 {
     width: 100%;
 }
 
-.newtikcet form > .miniform p span , .newtikcet form p span
+.newtikcet section > .miniform p span , .newtikcet section p span
 {
     
     font-family: 'Poppins', sans-serif;
@@ -43,7 +38,7 @@
     text-align: right;
 }
 
-.newtikcet form > .miniform p input
+.newtikcet section > .miniform p input
 {
     height: 46.06px;
     left: 1.21px;
@@ -59,7 +54,7 @@
     border-radius: 9.69763px;
 }
 
-.newtikcet form p textarea
+.newtikcet section p textarea
 {
     height: 100px;
     left: 1.21px;
@@ -75,7 +70,29 @@
     border-radius: 9.69763px;
 }
 
-.newtikcet form button
+.newtikcet section p >.selection
+{
+    width: 50%;
+    border-radius: 2%;
+    text-transform: capitalize;
+    padding: 5px;
+    margin-top: 10px;
+    height: 100px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.newtikcet section p >.selection >.radio
+{
+    display: none;
+}
+
+.newtikcet section p >.selection label
+{
+    cursor: pointer;
+}
+
+.newtikcet section p button
 {
     background-color: #A09F57;
     color: white;
@@ -84,4 +101,6 @@
     padding: 5px;
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
 }

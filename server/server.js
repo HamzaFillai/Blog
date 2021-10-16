@@ -29,11 +29,9 @@ app.get("/",async(request,response)=>{
     //const tickets = BlogModel.deleteTickets(A)
     
     
-    const user = BlogModel.UpdatePassword("nice")
-    user.then(function(ticket){ 
-        
-        response.send("ticket");
-    })
+    var A , B = [];
+    B[0] = "6152f1f0378fbe3b5843e6d7";
+    response.send(B)
 });
 
 //Get user list
@@ -195,6 +193,18 @@ app.post("/login",async(request,response)=>
             }
         })
     }
+})
+
+//Save ticket
+app.post("/saveticket",async(request,response)=>{
+    var Array = [];
+    Array[0] = request.body.option.toString();
+    var B = [];
+    B[0] = "6152f1f0378fbe3b5843e6d7";
+    const ticket = BlogModel.saveTicket(Date.now(),request.body.num,request.body.title,request.body.content, Array, B);
+    ticket.then(function(t){
+        response.send("Saved");
+    })
 })
 
 app.listen(8080, () => {

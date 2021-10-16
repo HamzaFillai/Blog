@@ -1,29 +1,76 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import Select from 'react-select'
 import NavBar from './NavBar'
 import "../../style/AddTicket.css"
+import Axios from "axios"
 
 export default function AddTicket() {
+
+    const [blogs,setBlogs] = useState([]);
+    const [option,setOption] = useState("");
+    const [title,setTitle] = useState("");
+    const [num,setNum] = useState();
+    const [content,setContent] = useState("");
+    
+    useEffect(()=>{
+        Axios.get("http://localhost:8080/getblogs").then((response)=>{
+            console.log(response.data);
+            setBlogs(response.data);
+        })
+    },[]);
+
+    const save = ()=>{
+        if(num=="" || title=="" || content=="" || option=="")
+        {
+            alert("Fill in all the fields")
+        }
+        else
+        {
+            Axios.post("http://localhost:8080/saveticket",{
+                num : num,
+                title : title,
+                content : content,
+                option : option,
+            }).then((response)=>{
+                console.log(response);
+            })
+        }
+    }
+
     return (
         <div className="newtikcet">
             <NavBar/>
-            <form>
+            <section>
                 <h1>Add new Ticket</h1>
-                <div className="miniform">
+                <div className="miniform" style={{textAlign:"center"}}>
                     <p>
-                        <span>Title :</span><td/>
-                        <input type="text"/>
+                        <span>Title :</span><br/>
+                        <input type="text" onChange={(e)=>setTitle(e.target.value)}/>
                     </p>
                     <p>
-                        <span>Number :</span><td/>
-                        <input type="number"/>
+                        <span>Number :</span><br/>
+                        <input type="number" onChange={(e)=>setNum(e.target.value)}/>
                     </p>
                 </div>
-                <p style={{marginTop:"5vh"}}>
-                    <span>Content :</span><td/>
-                    <textarea />
+                <p style={{marginTop:"2vh",marginLeft:"40px"}}>
+                    <span>Select name of the blog</span><br/>
+                    <div className="selection">
+                        {blogs.map((blog)=>
+                            <p kzy={blog._id}>
+                                <input name="blog" className="radio" type="radio" id={blog._id} value={blog._id} onChange={(e)=>setOption(e.target.value)}/>
+                                <label for={blog._id}>{blog.name}</label>
+                            </p>
+                        )}
+                    </div>
                 </p>
-                <button>Save</button>
-            </form>
+                <p style={{marginTop:"2vh",textAlign:"center"}}>
+                    <span>Content :</span><br/>
+                    <textarea onChange={(e)=>setContent(e.target.value)}/>
+                </p>
+                <p  style={{textAlign:"center"}}>
+                    <button onClick={()=>save()}>Save</button>
+                </p>
+            </section>
         </div>
     )
 }
