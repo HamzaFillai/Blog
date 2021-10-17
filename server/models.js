@@ -99,6 +99,12 @@ module.exports = {
         return getu;
     },
 
+    async getUserByEmail(email)
+    {
+        const getu = await Person.find({email : email});
+        return getu;
+    },
+
     async UpdatePassword(password)
     {
         const newpass = await Person.findOne({role : "admin"},(err,update)=>{

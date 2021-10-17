@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import "../../style/Login.css"
 import Axios from "axios"
+import Cookies from 'js-cookie';
 
 export default function Login() {
     
@@ -21,17 +22,22 @@ export default function Login() {
                 mail : mail,
                 password : password
             }).then((response)=>{
+                console.log(response.data)
                 if(response.data.error)
                 {
                     setErrorlog(response.data.error)
                     setError("");
                 }
 
-                if(response.data.success)
+                else
                 {
                     setError("");
                     setErrorlog("");
-                    console.log(response.data.success);
+                    if(response.data[0].role==null)
+                    {
+                        window.location.href="/user/home";
+                        Cookies.set("idu",response.data[0]._id)
+                    }
                 }
             })
         }

@@ -1,7 +1,13 @@
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import Cookies from 'js-cookie';
 
 export default function NavBar() {
+
+    const logout = () =>{
+        Cookies.remove("idu");
+    }
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" style={{backgroundColor:"#AAA492"}} variant="dark">
@@ -16,7 +22,7 @@ export default function NavBar() {
                         </Nav>
                         <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
-                            <a style={{fontSize:"20px"}} href="#login">Log out</a>
+                            <a onClick={()=>logout()} style={{fontSize:"20px"}} href="/">Log out</a>
                         </Navbar.Text>
                         </Navbar.Collapse>
                     </Navbar.Collapse>

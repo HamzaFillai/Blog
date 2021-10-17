@@ -185,22 +185,25 @@ app.post("/login",async(request,response)=>
         c.then(function(count){
             if(count==1)
             {
-                response.send({success:"Successfully"})            
+                const getuser = BlogModel.getUserByEmail(request.body.mail);
+                getuser.then(function(get){
+                    response.send(get)
+                })            
             }
             else
             {
-                response.send({error:"*Incorrect email address or password"})
+                response.send({error:"Incorrect email address or password"})
             }
         })
     }
 })
 
 //Save ticket
-app.post("/saveticket",async(request,response)=>{
+app.post("/saveticket/:id",async(request,response)=>{
     var Array = [];
     Array[0] = request.body.option.toString();
     var B = [];
-    B[0] = "6152f1f0378fbe3b5843e6d7";
+    B[0] = request.params.id;
     const ticket = BlogModel.saveTicket(Date.now(),request.body.num,request.body.title,request.body.content, Array, B);
     ticket.then(function(t){
         response.send("Saved");
