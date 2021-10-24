@@ -144,6 +144,18 @@ module.exports = {
         return ticket;
     },
 
+    async getTicketsByUser(id)
+    {
+        const ticket = await Ticket.find({idPerson : id});
+        return ticket;
+    },
+
+    async getTicket(id)
+    {
+        const ticket = await Ticket.find({_id : id});
+        return ticket;
+    },
+
     async deleteTickets(id)
     {
         const deleteu = await Ticket.deleteMany({idBlog : id});

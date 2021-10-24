@@ -29,9 +29,7 @@ app.get("/",async(request,response)=>{
     //const tickets = BlogModel.deleteTickets(A)
     
     
-    var A , B = [];
-    B[0] = "6152f1f0378fbe3b5843e6d7";
-    response.send(B)
+    
 });
 
 //Get user list
@@ -105,6 +103,26 @@ app.delete("/deleteblog/:id",async(request,response)=>{
 //Get Tickelist
 app.get("/gettickets",async(request,response)=> {
     const tickets = BlogModel.getTickets();
+    tickets.then(function(ticket){
+        response.send(ticket);
+    })
+})
+
+//Get contained
+app.get("/getcontained/:id",async(request,response)=>{
+    const id = request.params.id;
+    const contained = BlogModel.getTicket(id);
+    contained.then(function(content){
+        response.send(content);
+    })
+})
+
+//Get TicketList of one user
+app.get("/getticketsuser/:id",async(request,response)=>{
+    const id = request.params.id;
+    var Array = [];
+    Array[0] = id.toString();
+    const tickets = BlogModel.getTicketsByUser(Array);
     tickets.then(function(ticket){
         response.send(ticket);
     })

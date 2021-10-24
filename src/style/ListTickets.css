@@ -1,0 +1,39 @@
+.listtickets
+{
+    background-color: #FAEEE0;
+    height: 100vh;
+}
+
+.listtickets h1
+{
+    font-family: 'Lobster', cursive;
+    color: #C56824;
+    margin-top: 10vh;
+    font-size: 60px;
+    text-align: center;
+}
+
+.listtickets section
+{
+    height: 370px;
+    overflow: auto;
+}
+
+.listtickets section table
+{
+    border-collapse: collapse;
+    margin-top: 10vh;
+}
+
+.listtickets section table th 
+{
+    background-color: #E2C275;
+}
+
+.listtickets section table td , .listtickets section table th
+{
+    border: 1px solid black;   
+    width: 3%;
+    text-align: center;
+    height: 50px;
+}

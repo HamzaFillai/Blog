@@ -9,6 +9,7 @@ import Profil from "./components/Admin/Profil";
 import UserHome from "./components/Users/Home";
 import AddTicket from "./components/Users/AddTicket"
 import {BrowserRouter,Route,Switch} from "react-router-dom";
+import ListTickets from "./components/Users/ListTickets";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/admin/profile" component={Profil}/>
           <Route exact path="/user/home" component={UserHome}/>
           <Route exact path="/user/newticket" component={AddTicket}/>
+          <Route exact path="/user/listticket" component={ListTickets}/>
         </Switch>
     </BrowserRouter>
   );

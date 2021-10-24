@@ -58,8 +58,8 @@ export default function TableTickets() {
                     <thead>
                         <tr>
                             <th>Name of ticket</th>
-                            <th>Name of blog</th>
                             <th>Name of user</th>
+                            <th>Name of blog</th>
                             <th>Action</th>
                         </tr>
                     </thead>
