@@ -36,7 +36,7 @@ export default function AddTicket() {
                 swal({
                     text: "Your ticket has been added successfully",
                     type: "success",
-                    timer: 4000
+                    timer: 5000
                     });
                 window.location.href="/user/newticket";
             })

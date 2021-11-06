@@ -1,4 +1,86 @@
-.color-nav
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Zen+Antique&display=swap');
+
+.home
 {
-    background-color: blue;
+    background-color: #FAEEE0;
+    height: 100vh;
+}
+
+.home > .blog
+{
+    background-image: url("https://cdn.wallpapersafari.com/8/81/3ZPS9q.png");
+    height: 60vh;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.home > .blog > h1
+{
+    font-family: 'Explora', cursive;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home > .blog > h2
+{
+    font-family: 'Pacifico', cursive;
+    margin-left: 10vh;
+    margin-top: 30px;
+}
+
+.home > .blog > p
+{
+    font-family: 'Pacifico', cursive;
+    margin-top: 50px;
+    margin-left: 10vh;
+    font-size: 30px;
+}
+
+@media screen and (max-width : 490px){
+    .home > .blog > h2
+    {
+        margin-left: 0;
+    }
+
+    .home > .blog > p 
+    {
+        margin-left: 0;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width : 376px){
+    .home > .blog > h2
+    {
+        font-size: 20px;
+    }
+
+    .home > .blog > p 
+    {
+        margin-left: 0;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width : 321px){
+
+    .home > .blog > h1
+    {
+        font-size: 50px;
+    }
+
+    .home > .blog > h2
+    {
+        font-size: 20px;
+    }
+
+    .home > .blog > p 
+    {
+        margin-left: 0;
+        font-size: 20px;
+    }
 }
