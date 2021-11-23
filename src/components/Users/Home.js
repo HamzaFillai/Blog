@@ -57,7 +57,7 @@ export default function Home() {
                                   height={500}
                                 />
                                 <Carousel.Caption>
-                                  <h3>{blog.name}</h3>
+                                  <h3><a href={"/user/"+blog.name}>{blog.name}</a></h3>
                                 </Carousel.Caption>
                               </Carousel.Item>
                         )

@@ -10,6 +10,7 @@ import UserHome from "./components/Users/Home";
 import AddTicket from "./components/Users/AddTicket"
 import {BrowserRouter,Route,Switch} from "react-router-dom";
 import ListTickets from "./components/Users/ListTickets";
+import BlogPage from "./components/Blog Page/BlogPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/user/home" component={UserHome}/>
           <Route exact path="/user/newticket" component={AddTicket}/>
           <Route exact path="/user/listticket" component={ListTickets}/>
+          <Route exact path="/user/:blog" component={BlogPage}/>
         </Switch>
     </BrowserRouter>
   );

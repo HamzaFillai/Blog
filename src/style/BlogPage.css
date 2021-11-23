@@ -1,0 +1,40 @@
+.blogpage h1
+{
+    text-transform: capitalize;
+    background-color: #072833;
+    color: blanchedalmond;
+    padding: 12px;
+}
+
+.blogpage > .quote
+{
+    margin-top: -10px;
+    background-image: url("../image/quote.jpg");
+    height: 70vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.blogpage > .reading
+{
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    border: 1 solid ;
+    margin-top: -50px;
+    text-align: center;
+    padding: 12px;
+    box-shadow: 0px 0px 10px 0px;;
+}
+
+.blogpage > .reading h2
+{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.blogpage > .reading p
+{
+    font-size: 20px;
+}
