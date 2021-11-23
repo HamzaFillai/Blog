@@ -4,6 +4,8 @@ import  "../../style/UserHome.css"
 import "animate.css"
 import Axios from "axios"
 import Cookies from 'js-cookie'
+import { Carousel } from 'react-bootstrap'
+import image from "../../image/blogname.jpg" 
 
 export default function Home() {
 
@@ -43,15 +45,27 @@ export default function Home() {
             </div>
             <div className="nameblogs">
                 <h3>Here are my Blogs</h3>
-                {filteredArr.map((blog)=>{
-                    return(
-                        <div>
-                            <p>{blog.name}</p>
-                        </div>
-                    )
-                }
-                    
-                )}
+                <div className="myblogs">
+                    <Carousel>
+                      {filteredArr.map((blog)=>{
+                        return(
+                              <Carousel.Item>
+                                <img
+                                  className="d-block w-100 h-10 d-inline-block"
+                                  src={image}
+                                  alt="First slide"
+                                  height={500}
+                                />
+                                <Carousel.Caption>
+                                  <h3>{blog.name}</h3>
+                                </Carousel.Caption>
+                              </Carousel.Item>
+                        )
+                      }   
+                      )}
+                        
+                    </Carousel>
+                </div>
             </div>
         </div>
     )

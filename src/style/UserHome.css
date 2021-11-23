@@ -4,7 +4,7 @@
 .home
 {
     background-color: #FAEEE0;
-    height: 100vh;
+    height: 155vh;
 }
 
 .home > .blog
@@ -40,6 +40,22 @@
     font-size: 30px;
 }
 
+.home >.nameblogs h3
+{
+    font-family: 'Satisfy', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.home >.nameblogs> .myblogs h3
+{
+    color: black;
+    text-transform: capitalize;
+    font-size: 60px;
+}
+
 @media screen and (max-width : 490px){
     .home > .blog > h2
     {
@@ -66,7 +82,20 @@
     }
 }
 
+@media screen and (max-width : 360px){
+
+    .home
+    {
+        height: 167vh;
+    }
+}
+
 @media screen and (max-width : 321px){
+
+    .home
+    {
+        height: 188vh;
+    }
 
     .home > .blog > h1
     {
